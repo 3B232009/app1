@@ -57,3 +57,59 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+a.  app1 專案定義了哪些命名空間(name space)，命名空間的基底目錄各為何？
+    A:命名空間:App\                基底目錄:app/
+      命名空間:Database\Factories\ 基底目錄:database/factories/
+      命名空間:Database\Seeders\   基底目錄:database/seeders/
+
+b.  app1 專案預定安裝那些必需(require)的套件&版本，
+    以及app1 專案開發過程必需(require-dev)的套件&版本。      
+    A:預定安裝必須:   php ^8.2 
+                     laravel/framework  ^11.0
+                     guzzlehttp/guzzle ^7.8
+    專案開發過程必需: fakerphp/faker ^1.9.1
+                     laravel/pint ^1.0
+                     laravel/sail ^1.0
+                     mockery/mockery ^1.4.4
+                     nunomaduro/collision ^7.0
+                     phpunit/phpunit" ^10.0
+
+c.  請試著找出 laravel/framework 及 guzzlehttp/guzzle 
+    兩個套件在app1專案當中的位置。
+    A:vendor/laravel/framework/、vendor/guzzlehttp/guzzle/
+
+d.  在composer.lock 檔案當中packages 區域，分別找出 laravel/framework
+    及guzzlehttp/guzzle 兩個套件，請分別寫出上述兩個套件的真正安裝的版本、原始碼或網站的URL、以及各自相依那些套件。(請自行與這兩個套件的composer.json 的內容比較) 
+    A:
+    laravel/framework:安裝版本: 11.8.0
+                      原始碼/網站URL: url: https://github.com/laravel/framework.git
+                      相依套件: illuminate/*
+    guzzlehttp/guzzle:安裝版本: 7.8.1
+                      原始碼/網站URL: url: https://github.com/guzzle/guzzle.git
+                      相依套件:guzzlehttp/promises、guzzlehttp/psr7、psr/http-client、psr/http-message
+
+e.  請分別找出laravel/framework 及 guzzlehttp/guzzle 兩個套件定義了哪些
+    命名空間(name space)，命名空間的基底目錄各為何？ 
+    laravel/framework: 命名空間:Illuminate\ 
+                       基底目錄:vendor/laravel/framework/src/Illuminate/
+    guzzlehttp/guzzle: 命名空間:GuzzleHttp\
+                       基底目錄:vendor/guzzlehttp/guzzle/src/
+
+f.  請開啟app1專案當中的AppServiceProvider類別，位於
+    /app/HTTP/Providers/AppServiceProvider.php，請說出此類別在怎樣的namespace當中。
+    A:此類別的命名空間為 App\Providers
+
+g.  上述Controller 類別使用(use)了哪些其他命名空間的類別，你可以找出這些類別
+    在那個套件、以及套件當中的位置 (找到後可開啟他們的程式碼欣賞一下)。(提示；滑鼠移動到那些類別，Phpstorm會提示你)
+    A:使用的類別:Illuminate\Foundation\Auth\Access\AuthorizesRequests
+      所屬套件:laravel/framework
+      套件位置:vendor/laravel/framework/src/Illuminate/Foundation/Auth/Access/
+      -
+      使用的類別:Illuminate\Foundation\Validation\ValidatesRequests
+      所屬套件:laravel/framework
+      套件位置:vendor/laravel/framework/src/Illuminate/Foundation/Validation/
+      -
+      使用的類別:Illuminate\Routing\Controller
+      所屬套件:laravel/framework
+      套件位置:vendor/laravel/framework/src/Illuminate/Routing/Controller.php
